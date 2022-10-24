@@ -13,8 +13,10 @@ createButton.addEventListener('click', createBoxes);
 destroyButton.addEventListener('click', onDestroy);
 
 
+
 function createBoxes(amount) {
   amount = inputEl.value;
+  const arr = [];
 
   for (let i = 0; i < amount; i += 1) {
     const upgradedSize = initialSize + i * 10;
@@ -22,9 +24,11 @@ function createBoxes(amount) {
     markup.style.width = `${upgradedSize}px`;
     markup.style.height = `${upgradedSize}px`;
     markup.style.backgroundColor = getRandomHexColor();
-    boxEl.appendChild(markup);
+   arr.push(markup)
   }
+  boxEl.append(...arr)
 }
+
 
 function onDestroy() {
   boxEl.innerHTML = "";

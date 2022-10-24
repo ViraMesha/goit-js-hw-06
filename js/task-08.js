@@ -6,9 +6,11 @@ function handleSubmit(event) {
     const { email, password } = event.currentTarget.elements;
     const formOutput = { email: email.value, password: password.value };
     
-    if (!email.value.length || !password.value.length) {
-        alert("Всі поля повинні бути заповнені!!!");
-    } console.log(formOutput);
+    if (email.value && password.value) {
+        console.log(formOutput);
     form.reset();
+    } else alert("Всі поля повинні бути заповнені!!!");
 }
+
+
 
